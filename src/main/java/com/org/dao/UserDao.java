@@ -27,6 +27,9 @@ public static User fetchUserByEmailAndPassword(String email, String password) {
 	query.setParameter(1, email);
 	query.setParameter(2, password);
 	List<User> list = query.getResultList();
+	if (list.isEmpty()) {
+		return null;
+	}
 	return list.get(0);
 	}
 

@@ -17,6 +17,15 @@
 				<div class="card paint-card">
 					<div class="card-body">
 						<p class="fs-4 text-center">User Login</p>
+						<%String msg = (String) session.getAttribute("fail");
+						
+						if(msg != null){%>
+							
+							<h3 class="text-center text-danger"><%= msg %></h3>
+						<%
+							session.removeAttribute("fail");
+						}
+						%>
 						<form action="login" method="post">
 							<div class="mb-3">
 								<label class="form-label">Email Address</label> <input
